@@ -1,0 +1,78 @@
+{
+  "name": "@jizuo/media-models-plugin",
+  "version": "0.3.7",
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*": "./locale/*"
+  },
+  "files": [
+    "lib/*.js",
+    "cordis.patch.yml",
+    "README.md",
+    "locale",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@jizuo/plugin",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "dependencies": {
+    "@jizuo/plugin": "0.3.7"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "4.0.4",
+    "react": "18.3.1",
+    "@deepseek-ai/dsh": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-tools": "0.2.0-rc.2"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "bundledDependencies": [
+    "@jizuo/plugin"
+  ],
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShikangPang/jizuo-creator-media-models.git"
+  },
+  "packageManager": "pnpm@11.7.0",
+  "description": "媒体模型：独立图片与视频模型配置、聊天生成工具",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "jizuo",
+    "media-models"
+  ],
+  "icon": "./icon.svg",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "node scripts/build.mjs typecheck",
+    "install:harness": "node scripts/install.mjs",
+    "pack:core": "pnpm --dir core pack"
+  }
+}

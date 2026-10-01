@@ -1,0 +1,8 @@
+- insert:
+    - id: jizuo-media-models-core
+      name: "@jizuo/plugin"
+      config:
+        hostUi: native
+        chapterWorkflowEnabled: false
+    - id: jizuo-media-models
+      name: "@jizuo/media-models-plugin"
